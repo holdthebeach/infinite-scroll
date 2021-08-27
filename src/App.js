@@ -9,6 +9,7 @@ function App() {
   const scrollContainer = useRef(null);
   const [totalPhotos, setTotalPhotos] = useState(null);
   const [pagesLoaded, setPagesLoaded] = useState([]);
+  const [favorites, setFavorites] = useState(localStorage.getItem("favorites"));
 
   const nextPage = pagesLoaded[pagesLoaded.length - 1] + 1;
 
@@ -69,6 +70,9 @@ function App() {
       });
   };
 
+  //needs to be worked on to save the item id
+  const handleSave = () => setFavorites(favorites.push("item"));
+
   useEffect(() => {
     fetch(
       `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${configData.API_KEY}&text=baby+orangutan&per_page=20&format=json&nojsoncallback=1`
@@ -93,6 +97,10 @@ function App() {
     }
   });
 
+  useEffect(() => {
+    localStorage.setItem("favorites", favorites);
+  }, [favorites]);
+
   return (
     <div className="container" ref={scrollContainer}>
       {totalPhotos &&
@@ -103,6 +111,7 @@ function App() {
               title={item.title}
               name={item.photographerName}
               order={index}
+              handleSave={handleSave}
             />
           );
         })}

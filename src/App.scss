@@ -48,6 +48,18 @@
         font-style: italic;
         margin: 0.5rem 0;
       }
+
+      .button {
+        color: #fff;
+        border: solid 1px #fff;
+        border-radius: 1.5rem;
+        padding: 0.75rem;
+        width: 8rem;
+        height: 3rem;
+        box-sizing: border-box;
+        font-size: 1.25rem;
+        margin-top: 0.5rem;
+      }
     }
   }
 }

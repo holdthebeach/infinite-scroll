@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
-const Card = ({ title, imageUrl, name, index }) => {
+import Button from "./Button.js";
+
+const Card = ({ title, imageUrl, name, index, handleSave }) => {
   const [isHoveredOver, setIsHoveredOver] = useState(false);
 
   const showPhotoDetails = () => setIsHoveredOver(true);
@@ -21,6 +23,7 @@ const Card = ({ title, imageUrl, name, index }) => {
           <h2 className="title">{title}</h2>
           <hr></hr>
           <h3 className="name">{name}</h3>
+          <Button handleSave={handleSave} />
         </div>
       )}
     </div>
