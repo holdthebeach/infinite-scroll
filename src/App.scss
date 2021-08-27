@@ -1,0 +1,19 @@
+.container {
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  .card {
+    position: relative;
+    height: 20rem;
+    width: 30rem;
+    background-size: cover;
+    background-position: center;
+
+    .info {
+      position: absolute;
+      top: 30%;
+      text-align: center;
+    }
+  }
+}
