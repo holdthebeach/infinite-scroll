@@ -9,6 +9,7 @@ function App() {
   const scrollContainer = useRef(null);
   const [totalPhotos, setTotalPhotos] = useState(null);
   const [pagesLoaded, setPagesLoaded] = useState([]);
+
   const nextPage = pagesLoaded[pagesLoaded.length - 1] + 1;
 
   const getUrl = (serverId, id, secret) =>
